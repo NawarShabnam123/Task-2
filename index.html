@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light On/Off Counter</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Light On/Off Counter</h1>
+
+        <br>
+        <span style="color:skyblue;">Let the circle is a bulb.</span>
+        <section onmouseover="onCounter()" onmouseout="offCounter()"></section>
+        <span id="status" style="color:white;"></span>
+        <br>
+
+        <div class="cnt">
+            <p>Total on: <p id="onCount"></p></p>
+            <p>Total off: <p id="offCount"></p></p>
+        </div>
+    </div>
+
+    <script>
+        onValue = 0;
+        function onCounter(){
+            onValue = onValue + 1;
+            document.getElementById("onCount").innerHTML = onValue;
+            document.getElementById("status").innerHTML = "Status: ON";
+        }
+
+        offValue = 0;
+        function offCounter(){
+            offValue = offValue + 1;
+            document.getElementById("offCount").innerHTML = offValue;
+            document.getElementById("status").innerHTML = "Status: OFF";
+        }
+    </script>
+</body>
+<style>
+    html{
+        background: black;
+        color: white;
+    }
+    *{
+        margin: 10px 5px 10px 5px;
+        padding: 0;
+        transition: 200ms ease-in-out;
+        box-sizing: border-box;
+        text-decoration: none;
+
+    }
+    #container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #container h1{
+        border-bottom: 1px solid white;
+    }
+    section{
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: white;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+    section:hover{
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: yellow;
+        border: 1px solid rgb(255, 199, 45);
+        box-shadow: 0 0 20px rgb(204, 204, 0);
+        cursor: pointer;
+    }
+    p{
+        display: inline-block;
+    }
+    .cnt{
+        border-top: 1px solid white;
+    }
+</style>
+</html>
